@@ -42,6 +42,13 @@ RCT_EXPORT_METHOD(navigate:(NSString *)route)
     });
 }
 
+RCT_EXPORT_METHOD(search:(NSString *)query)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [HSBeacon search:query beaconSettings:self->settings];
+    });
+}
+
 RCT_EXPORT_METHOD(identify:(NSDictionary *)identity)
 {
     HSBeaconUser *user = [[HSBeaconUser alloc] init];

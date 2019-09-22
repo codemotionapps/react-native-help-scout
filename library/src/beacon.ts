@@ -12,6 +12,7 @@ interface IBeacon {
 	identify(identity: IIdentity): void
 	logout(): void
 	navigate(route: string): void
+	search(query: string): void
 }
 
 export default <IBeacon>NativeModules.RNHelpScoutBeacon

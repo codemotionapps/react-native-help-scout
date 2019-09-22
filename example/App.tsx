@@ -4,10 +4,6 @@ import { SafeAreaView, StyleSheet, Text, TouchableOpacity, Button, StatusBar, Te
 import { Beacon } from 'react-native-help-scout'
 
 const styles = StyleSheet.create({
-	safeArea: {
-		backgroundColor: 'black',
-		flex: 1,
-	},
 	row: {
 		flexDirection: 'row',
 	},
@@ -46,11 +42,11 @@ export default function App() {
 	const [search, setSearch] = useState('')
 
 	function handleSearch() {
-		Beacon.navigate(`/docs/search?query=${search}`)
+		Beacon.search(search)
 	}
 
 	return (
-		<SafeAreaView style={styles.safeArea}>
+		<SafeAreaView style={styles.flex}>
 			<StatusBar barStyle="dark-content" />
 			<Button
 				title="Login"
