@@ -7,4 +7,7 @@
    <FileRef
       location = "group:React Native Help Scout Example.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../../library/ios/RNHelpScout.xcodeproj">
+   </FileRef>
 </Workspace>

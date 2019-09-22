@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E1853A92337D00F005E6C14 /* RNHelpScout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1853A82337D00F005E6C14 /* RNHelpScout.m */; };
-		6E1853AA2337D00F005E6C14 /* RNHelpScout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E1853A72337D00F005E6C14 /* RNHelpScout.h */; };
+		6E3914642337F31700CCB64E /* RNHelpScoutBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3914622337F31700CCB64E /* RNHelpScoutBeacon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +17,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				6E1853AA2337D00F005E6C14 /* RNHelpScout.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,8 +24,8 @@
 
 /* Begin PBXFileReference section */
 		6E1853A42337D00F005E6C14 /* libRNHelpScout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNHelpScout.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E1853A72337D00F005E6C14 /* RNHelpScout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNHelpScout.h; sourceTree = "<group>"; };
-		6E1853A82337D00F005E6C14 /* RNHelpScout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNHelpScout.m; sourceTree = "<group>"; };
+		6E3914622337F31700CCB64E /* RNHelpScoutBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHelpScoutBeacon.m; sourceTree = "<group>"; };
+		6E3914632337F31700CCB64E /* RNHelpScoutBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHelpScoutBeacon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +43,8 @@
 			isa = PBXGroup;
 			children = (
 				6E1853A52337D00F005E6C14 /* Products */,
-				6E1853A72337D00F005E6C14 /* RNHelpScout.h */,
-				6E1853A82337D00F005E6C14 /* RNHelpScout.m */,
+				6E3914632337F31700CCB64E /* RNHelpScoutBeacon.h */,
+				6E3914622337F31700CCB64E /* RNHelpScoutBeacon.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,7 +113,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E1853A92337D00F005E6C14 /* RNHelpScout.m in Sources */,
+				6E3914642337F31700CCB64E /* RNHelpScoutBeacon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

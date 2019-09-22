@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, TouchableOpacity } from 'react-native'
+import { SafeAreaView, StyleSheet, ScrollView, View, Text, TouchableOpacity } from 'react-native'
 
 import {
 	Header,
@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
 export default function App() {
 	return (
 		<Fragment>
-			<StatusBar barStyle="dark-content" />
 			<SafeAreaView>
 				<ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
 					<Header />
