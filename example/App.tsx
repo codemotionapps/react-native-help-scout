@@ -1,5 +1,15 @@
 import React, { useState } from 'react'
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, Button, StatusBar, TextInput, View } from 'react-native'
+import {
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	Button,
+	StatusBar,
+	TextInput,
+	View,
+	Alert,
+} from 'react-native'
 
 import { Beacon } from 'react-native-help-scout'
 
@@ -76,6 +86,15 @@ export default function App() {
 				<Button title="Search" onPress={handleSearch} />
 			</View>
 			<Button title="Open article" onPress={() => Beacon.openArticle('592acfa30428634b4a337f5d')} />
+			<Button
+				title="Open and dismiss in 5 seconds and show alert"
+				onPress={() => {
+					Beacon.open()
+					setTimeout(() => {
+						Beacon.dismiss(() => Alert.alert('Beacon closed!'))
+					}, 5000)
+				}}
+			/>
 			<TouchableOpacity style={styles.contactUsButton} onPress={() => Beacon.open()}>
 				<Text style={styles.contactUsText}>💬</Text>
 			</TouchableOpacity>

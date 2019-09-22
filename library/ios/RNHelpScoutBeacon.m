@@ -12,7 +12,7 @@
 
 - (void)dealloc
 {
-    [self close];
+    [self close:NULL];
     dispatch_async(dispatch_get_main_queue(), ^{
         [HSBeacon logout];
     });
@@ -58,6 +58,11 @@ RCT_EXPORT_METHOD(openArticle:(NSString *)articleId)
     });
 }
 
+RCT_EXPORT_METHOD(dismiss:(RCTResponseSenderBlock)callback)
+{
+    [self close:callback];
+}
+
 RCT_EXPORT_METHOD(identify:(NSDictionary *)identity)
 {
     HSBeaconUser *user = [[HSBeaconUser alloc] init];
@@ -84,9 +89,11 @@ RCT_EXPORT_METHOD(logout)
     [HSBeacon logout];
 }
 
-- (void)close
+- (void)close:(RCTResponseSenderBlock)callback
 {
-    [HSBeacon dismissBeacon: ^{}];
+    [HSBeacon dismissBeacon: callback == NULL ? ^{} : ^{
+        callback(NULL);
+    }];
 }
 
 - (void)startObserving {

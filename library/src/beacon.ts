@@ -14,6 +14,7 @@ interface IBeacon {
 	navigate(route: string): void
 	search(query: string): void
 	openArticle(articleId: string): void
+	dismiss(callback: () => void): void
 }
 
 export default <IBeacon>NativeModules.RNHelpScoutBeacon
