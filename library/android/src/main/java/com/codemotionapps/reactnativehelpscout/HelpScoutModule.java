@@ -53,4 +53,9 @@ public class HelpScoutModule extends ReactContextBaseJavaModule {
 			Beacon.addAttributeWithKey(key, (String) entry.getValue());
 		}
 	}
+
+	@ReactMethod
+	public void logout() {
+		Beacon.logout();
+	}
 }
