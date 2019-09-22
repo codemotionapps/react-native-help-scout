@@ -56,7 +56,7 @@ RCT_EXPORT_METHOD(identify:(NSDictionary *)identity)
     [HSBeacon login:user];
 }
 
-- (void)logout
+RCT_EXPORT_METHOD(logout)
 {
     [HSBeacon logout];
 }
