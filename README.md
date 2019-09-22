@@ -38,10 +38,13 @@ Beacon.logout()
 Beacon.navigate('/ask/message/')
 
 // Open with search
-Beacon.search('hipaa')
+Beacon.search('query')
 
 // Open article
 Beacon.openArticle('DOCS_ARTICLE_ID')
+
+// Open previous messages (Android only)
+Beacon.previousMessages()
 
 // Dismissing the Beacon
 Beacon.dismiss(() => console.log('Beacon dismissed'))

@@ -9,6 +9,7 @@ import {
 	TextInput,
 	View,
 	Alert,
+	Platform,
 } from 'react-native'
 
 import { Beacon } from 'react-native-help-scout'
@@ -99,6 +100,10 @@ export default function App() {
 						}, 5000)
 					}}
 				/>
+				{/* <Button title="Chat" onPress={() => Beacon.chat()} /> */}
+				{Platform.OS === 'android' ? (
+					<Button title="Previous messages" onPress={() => Beacon.previousMessages()} />
+				) : null}
 			</View>
 			<View style={styles.flex} />
 			<TouchableOpacity style={styles.contactUsButton} onPress={() => Beacon.open()}>

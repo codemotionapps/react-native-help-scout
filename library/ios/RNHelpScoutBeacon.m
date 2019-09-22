@@ -37,6 +37,20 @@ RCT_EXPORT_METHOD(navigate:(NSString *)route)
     });
 }
 
+RCT_EXPORT_METHOD(previousMessages)
+{
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [HSBeacon navigate:@"/previous-messages/" beaconSettings:self->settings];
+//    });
+}
+
+//RCT_EXPORT_METHOD(chat)
+//{
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [HSBeacon navigate:@"/ask/chat/" beaconSettings:self->settings];
+//    });
+//}
+
 RCT_EXPORT_METHOD(search:(NSString *)query)
 {
     dispatch_async(dispatch_get_main_queue(), ^{

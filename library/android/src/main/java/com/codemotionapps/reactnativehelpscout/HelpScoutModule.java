@@ -5,8 +5,10 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.helpscout.beacon.Beacon;
+import com.helpscout.beacon.model.BeaconScreens;
 import com.helpscout.beacon.ui.BeaconActivity;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -63,4 +65,14 @@ public class HelpScoutModule extends ReactContextBaseJavaModule {
 	public void navigate(String route) {
 
 	}
+
+	@ReactMethod
+	public void previousMessages() {
+		BeaconActivity.open(this.reactContext, BeaconScreens.PREVIOUS_MESSAGES, new ArrayList<String>());
+	}
+
+//	@ReactMethod
+//	public void chat() {
+//		BeaconActivity.open(this.reactContext, BeaconScreens.CHAT, new ArrayList<String>());
+//	}
 }

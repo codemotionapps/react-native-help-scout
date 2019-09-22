@@ -15,6 +15,8 @@ interface IBeacon extends EventSubscriptionVendor {
 	navigate(route: string): void
 	search(query: string): void
 	openArticle(articleId: string): void
+	// chat(): void
+	previousMessages(): void
 	dismiss(callback: () => void): void
 }
 
