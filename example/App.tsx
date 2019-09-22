@@ -26,11 +26,14 @@ const styles = StyleSheet.create({
 	flex: {
 		flex: 1,
 	},
+	ph: {
+		paddingHorizontal: 8,
+	},
 	input: {
-		backgroundColor: '#333222',
+		backgroundColor: '#333333',
 		padding: 8,
 		borderRadius: 6,
-		margin: 8,
+		marginRight: 8,
 		flex: 1,
 		color: 'white',
 	},
@@ -59,42 +62,45 @@ export default function App() {
 	}
 
 	return (
-		<SafeAreaView style={[styles.flex, styles.spaceEvenly]}>
+		<SafeAreaView style={styles.flex}>
 			<StatusBar barStyle="dark-content" />
-			<Button
-				title="Login"
-				onPress={() =>
-					Beacon.identify({
-						email: 'joshuaheywood@live.com',
-						name: 'Joshua Heywood',
-						company: 'Megatronic',
-						jobTitle: 'Marketing Manager',
-					})
-				}
-			/>
-			<Button title="Logout" onPress={() => Beacon.logout()} />
-			<Button title="Message" onPress={() => Beacon.navigate('/ask/message')} />
-			<View style={[styles.row, styles.alignCenter]}>
-				<TextInput
-					value={search}
-					onChangeText={setSearch}
-					onSubmitEditing={handleSearch}
-					style={styles.input}
-					placeholder="Search docs..."
-					placeholderTextColor="#666"
+			<View style={[styles.flex, styles.spaceEvenly, styles.ph]}>
+				<Button
+					title="Login"
+					onPress={() =>
+						Beacon.identify({
+							email: 'joshuaheywood@live.com',
+							name: 'Joshua Heywood',
+							company: 'Megatronic',
+							jobTitle: 'Marketing Manager',
+						})
+					}
 				/>
-				<Button title="Search" onPress={handleSearch} />
+				<Button title="Logout" onPress={() => Beacon.logout()} />
+				<Button title="Message" onPress={() => Beacon.navigate('/ask/message')} />
+				<View style={[styles.row, styles.alignCenter]}>
+					<TextInput
+						value={search}
+						onChangeText={setSearch}
+						onSubmitEditing={handleSearch}
+						style={styles.input}
+						placeholder="Search docs..."
+						placeholderTextColor="#666"
+					/>
+					<Button title="Search" onPress={handleSearch} />
+				</View>
+				<Button title="Open article" onPress={() => Beacon.openArticle('592acfa30428634b4a337f5d')} />
+				<Button
+					title="Open and dismiss in 5 seconds and show alert"
+					onPress={() => {
+						Beacon.open()
+						setTimeout(() => {
+							Beacon.dismiss(() => Alert.alert('Beacon closed!'))
+						}, 5000)
+					}}
+				/>
 			</View>
-			<Button title="Open article" onPress={() => Beacon.openArticle('592acfa30428634b4a337f5d')} />
-			<Button
-				title="Open and dismiss in 5 seconds and show alert"
-				onPress={() => {
-					Beacon.open()
-					setTimeout(() => {
-						Beacon.dismiss(() => Alert.alert('Beacon closed!'))
-					}, 5000)
-				}}
-			/>
+			<View style={styles.flex} />
 			<TouchableOpacity style={styles.contactUsButton} onPress={() => Beacon.open()}>
 				<Text style={styles.contactUsText}>💬</Text>
 			</TouchableOpacity>
