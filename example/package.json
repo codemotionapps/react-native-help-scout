@@ -1,0 +1,18 @@
+{
+	"name": "example",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "REACT_EDITOR=true react-native start"
+	},
+	"dependencies": {
+		"react": "16.8.6",
+		"react-native": "0.60.5",
+		"react-native-dotenv": "0.2.0",
+		"react-native-help-scout": "*"
+	},
+	"devDependencies": {
+		"@types/react": "^16.9.2",
+		"@types/react-native": "^0.60.15"
+	}
+}

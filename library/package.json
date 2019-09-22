@@ -1,0 +1,34 @@
+{
+	"name": "react-native-help-scout",
+	"version": "0.0.1",
+	"main": "./dist/index.js",
+	"typings": "./dist/index.d.ts",
+	"repository": "git@github.com:codemotionapps/react-native-help-scout.git",
+	"author": "Dimitar Nestorov <opensource@dimitarnestorov.com> (https://dimitarnestorov.com)",
+	"homepage": "https://github.com/codemotionapps/react-native-help-scout",
+	"description": "Help Scout's Beacon for React Native",
+	"license": "MIT",
+	"scripts": {
+		"prepublishOnly": "yarn run clean && yarn run copy-readme && yarn run license && yarn run build && yarn run copy-js-d.ts",
+		"clean": "rimraf dist",
+		"copy-readme": "cp ../README.md ./",
+		"copy-license": "cp ../LICENSE ./",
+		"copy-js-d.ts": "cp ./src/*.js ./src/*.d.ts ./dist",
+		"build": "tsc",
+		"watch": "yarn run build --watch"
+	},
+	"peerDependencies": {
+		"react": "^16.8.6",
+		"react-native": "^0.60.0"
+	},
+	"dependencies": {
+		"@types/react": "*",
+		"@types/react-native": "*"
+	},
+	"keywords": [
+		"react",
+		"react native",
+		"help scout",
+		"help scout beacon"
+	]
+}

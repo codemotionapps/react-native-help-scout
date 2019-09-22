@@ -1,0 +1,29 @@
+{
+	"workspaces": {
+		"packages": [
+			"example",
+			"library"
+		],
+		"nohoist": [
+			"**/react-native",
+			"**/react-native/**",
+			"**/react-native-dotenv",
+			"**/react-native-dotenv/**",
+			"**/react",
+			"**/react/**"
+		]
+	},
+	"scripts": {
+		"example": "yarn workspace example",
+		"library": "yarn workspace library"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.0",
+		"@babel/runtime": "^7.6.0",
+		"babel-plugin-module-resolver": "^3.2.0",
+		"metro-react-native-babel-preset": "0.54.1",
+		"rimraf": "^3.0.0",
+		"typescript": "^3.6.3"
+	},
+	"private": true
+}
