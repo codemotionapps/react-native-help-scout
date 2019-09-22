@@ -6,4 +6,7 @@ import { Beacon } from 'react-native-help-scout'
 
 Beacon.init(BEACON_ID)
 
+Beacon.events.on('open', () => console.log('Beacon opened'))
+Beacon.events.on('close', () => console.log('Beacon closed'))
+
 AppRegistry.registerComponent('example', () => App)

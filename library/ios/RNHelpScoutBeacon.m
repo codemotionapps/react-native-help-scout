@@ -28,6 +28,7 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(init:(NSString *)beaconId)
 {
     settings = [[HSBeaconSettings alloc] initWithBeaconId:beaconId];
+    settings.delegate = self;
 }
 
 RCT_EXPORT_METHOD(open)
@@ -109,13 +110,13 @@ RCT_EXPORT_METHOD(logout)
 	return @[@"open", @"close"];
 }
 
-- (void)handleOpen
+- (void)onBeaconOpen:(HSBeaconSettings *)beaconSettings
 {
     if (!hasListeners) return;
 	[self sendEventWithName:@"open" body:NULL];
 }
 
-- (void)handleClose
+- (void)onBeaconClose:(HSBeaconSettings *)beaconSettings
 {
     if (!hasListeners) return;
 	[self sendEventWithName:@"close" body:NULL];

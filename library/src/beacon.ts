@@ -1,4 +1,5 @@
-import { NativeModules } from 'react-native'
+import { NativeModules, NativeEventEmitter, EventSubscriptionVendor } from 'react-native'
+import { EventEmitter } from 'events'
 
 interface IIdentity {
 	email?: string
@@ -6,7 +7,7 @@ interface IIdentity {
 	[key: string]: string | undefined
 }
 
-interface IBeacon {
+interface IBeacon extends EventSubscriptionVendor {
 	init(beaconId: string): void
 	open(): void
 	identify(identity: IIdentity): void
@@ -17,4 +18,32 @@ interface IBeacon {
 	dismiss(callback: () => void): void
 }
 
-export default <IBeacon>NativeModules.RNHelpScoutBeacon
+const NativeModule = <IBeacon>NativeModules.RNHelpScoutBeacon
+
+const nativeEmitter = new NativeEventEmitter(NativeModule)
+
+type Events = {
+	open: []
+	close: []
+}
+
+interface BeaconEventEmitter extends EventEmitter {
+	on<K extends keyof Events>(event: K, listener: (...args: Events[K]) => void): this
+	once<K extends keyof Events>(event: K, listener: (...args: Events[K]) => void): this
+	emit<K extends keyof Events>(event: K, ...args: Events[K]): boolean
+}
+
+const events = new EventEmitter() as BeaconEventEmitter
+
+nativeEmitter.addListener('open', () => {
+	events.emit('open')
+})
+
+nativeEmitter.addListener('close', () => {
+	events.emit('close')
+})
+
+type BeaconWithEvents = IBeacon & { events: BeaconEventEmitter }
+;(NativeModule as BeaconWithEvents).events = events
+
+export default <BeaconWithEvents>NativeModule

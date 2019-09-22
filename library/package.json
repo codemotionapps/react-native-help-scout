@@ -22,8 +22,10 @@
 		"react-native": "^0.60.0"
 	},
 	"dependencies": {
+		"@types/events": "*",
 		"@types/react": "*",
-		"@types/react-native": "*"
+		"@types/react-native": "*",
+		"events": "^3.0.0"
 	},
 	"keywords": [
 		"react",

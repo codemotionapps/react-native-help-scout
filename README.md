@@ -48,14 +48,14 @@ Beacon.dismiss(() => console.log('Beacon dismissed'))
 
 // Event handlers
 const openHandler = () => console.log('Beacon opened')
-Beacon.on('open', openHandler)
-Beacon.off('open', openHandler)
-Beacon.off('open')
-Beacon.once('open', () => console.log('This will only get called the first time the open event is triggered'))
+Beacon.events.on('open', openHandler)
+Beacon.events.off('open', openHandler)
+Beacon.events.off('open')
+Beacon.events.once('open', () => console.log('This will only get called the first time the open event is triggered'))
 
 const closeHandler = () => console.log('Beacon closed')
-Beacon.on('close', closeHandler)
-Beacon.off('close', closeHandler)
-Beacon.off('close')
-Beacon.once('close', () => console.log('This will only get called the first time the close event is triggered'))
+Beacon.events.on('close', closeHandler)
+Beacon.events.off('close', closeHandler)
+Beacon.events.off('close')
+Beacon.events.once('close', () => console.log('This will only get called the first time the close event is triggered'))
 ```
