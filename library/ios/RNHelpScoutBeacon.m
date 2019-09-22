@@ -13,7 +13,9 @@
 - (void)dealloc
 {
     [self close];
-    [self logout];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [HSBeacon logout];
+    });
 }
 
 RCT_EXPORT_MODULE()
