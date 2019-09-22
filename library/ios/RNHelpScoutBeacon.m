@@ -13,17 +13,9 @@
 - (void)dealloc
 {
     [self close:NULL];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [HSBeacon logout];
-    });
 }
 
 RCT_EXPORT_MODULE()
-
-+ (BOOL)requiresMainQueueSetup
-{
-    return YES;  // only do this if your module initialization relies on calling UIKit!
-}
 
 RCT_EXPORT_METHOD(init:(NSString *)beaconId)
 {

@@ -9,7 +9,6 @@
     <codeStyleSettings language="JAVA">
       <option name="KEEP_BLANK_LINES_IN_DECLARATIONS" value="0" />
       <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
-      <option name="SPACE_AFTER_COMMA" value="false" />
       <indentOptions>
         <option name="USE_TAB_CHARACTER" value="true" />
       </indentOptions>

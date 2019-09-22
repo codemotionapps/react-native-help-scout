@@ -9,10 +9,10 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
-public class RNHelpScoutPackage implements ReactPackage {
+public class HelpScoutPackage implements ReactPackage {
 	@Override
 	public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-		return Arrays.<NativeModule>asList(new RNHelpScoutModule(reactContext));
+		return Arrays.<NativeModule>asList(new HelpScoutModule(reactContext));
 	}
 
 	@Override
