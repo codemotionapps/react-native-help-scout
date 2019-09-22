@@ -67,6 +67,13 @@ public class HelpScoutModule extends ReactContextBaseJavaModule {
 	}
 
 	@ReactMethod
+	public void search(String query) {
+		ArrayList<String> list = new ArrayList<String>();
+		list.add(query);
+		BeaconActivity.open(this.reactContext, BeaconScreens.SEARCH_SCREEN, list);
+	}
+
+	@ReactMethod
 	public void previousMessages() {
 		BeaconActivity.open(this.reactContext, BeaconScreens.PREVIOUS_MESSAGES, new ArrayList<String>());
 	}

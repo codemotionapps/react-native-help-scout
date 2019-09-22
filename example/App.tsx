@@ -10,6 +10,7 @@ import {
 	View,
 	Alert,
 	Platform,
+	ScrollView,
 } from 'react-native'
 
 import { Beacon } from 'react-native-help-scout'
@@ -29,6 +30,9 @@ const styles = StyleSheet.create({
 	},
 	ph: {
 		paddingHorizontal: 8,
+	},
+	pt: {
+		paddingTop: 8,
 	},
 	input: {
 		backgroundColor: '#333333',
@@ -65,7 +69,8 @@ export default function App() {
 	return (
 		<SafeAreaView style={styles.flex}>
 			<StatusBar barStyle="dark-content" />
-			<View style={[styles.flex, styles.spaceEvenly, styles.ph]}>
+			<ScrollView style={[styles.flex, styles.ph]} alwaysBounceVertical={false}>
+				<View style={styles.pt} />
 				<Button
 					title="Login"
 					onPress={() =>
@@ -77,8 +82,11 @@ export default function App() {
 						})
 					}
 				/>
+				<View style={styles.pt} />
 				<Button title="Logout" onPress={() => Beacon.logout()} />
+				<View style={styles.pt} />
 				<Button title="Message" onPress={() => Beacon.navigate('/ask/message')} />
+				<View style={styles.pt} />
 				<View style={[styles.row, styles.alignCenter]}>
 					<TextInput
 						value={search}
@@ -90,7 +98,9 @@ export default function App() {
 					/>
 					<Button title="Search" onPress={handleSearch} />
 				</View>
+				<View style={styles.pt} />
 				<Button title="Open article" onPress={() => Beacon.openArticle('592acfa30428634b4a337f5d')} />
+				<View style={styles.pt} />
 				<Button
 					title="Open and dismiss in 5 seconds and show alert"
 					onPress={() => {
@@ -100,12 +110,15 @@ export default function App() {
 						}, 5000)
 					}}
 				/>
+				<View style={styles.pt} />
 				{/* <Button title="Chat" onPress={() => Beacon.chat()} /> */}
 				{Platform.OS === 'android' ? (
-					<Button title="Previous messages" onPress={() => Beacon.previousMessages()} />
+					<>
+						<Button title="Previous messages" onPress={() => Beacon.previousMessages()} />
+						<View style={styles.pt} />
+					</>
 				) : null}
-			</View>
-			<View style={styles.flex} />
+			</ScrollView>
 			<TouchableOpacity style={styles.contactUsButton} onPress={() => Beacon.open()}>
 				<Text style={styles.contactUsText}>💬</Text>
 			</TouchableOpacity>
