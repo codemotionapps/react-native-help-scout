@@ -1,5 +1,5 @@
-import React from 'react'
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, Button, StatusBar } from 'react-native'
+import React, { useState } from 'react'
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, Button, StatusBar, TextInput, View } from 'react-native'
 
 import { Beacon } from 'react-native-help-scout'
 
@@ -7,6 +7,23 @@ const styles = StyleSheet.create({
 	safeArea: {
 		backgroundColor: 'black',
 		flex: 1,
+	},
+	row: {
+		flexDirection: 'row',
+	},
+	alignCenter: {
+		alignItems: 'center',
+	},
+	flex: {
+		flex: 1,
+	},
+	input: {
+		backgroundColor: '#333222',
+		padding: 8,
+		borderRadius: 6,
+		margin: 8,
+		flex: 1,
+		color: 'white',
 	},
 	contactUsButton: {
 		width: 60,
@@ -26,6 +43,12 @@ const styles = StyleSheet.create({
 })
 
 export default function App() {
+	const [search, setSearch] = useState('')
+
+	function handleSearch() {
+		Beacon.navigate(`/docs/search?query=${search}`)
+	}
+
 	return (
 		<SafeAreaView style={styles.safeArea}>
 			<StatusBar barStyle="dark-content" />
@@ -41,6 +64,18 @@ export default function App() {
 				}
 			/>
 			<Button title="Logout" onPress={() => Beacon.logout()} />
+			<Button title="Message" onPress={() => Beacon.navigate('/ask/message')} />
+			<View style={[styles.row, styles.alignCenter]}>
+				<TextInput
+					value={search}
+					onChangeText={setSearch}
+					onSubmitEditing={handleSearch}
+					style={styles.input}
+					placeholder="Search docs..."
+					placeholderTextColor="#666"
+				/>
+				<Button title="Search" onPress={handleSearch} />
+			</View>
 			<TouchableOpacity style={styles.contactUsButton} onPress={() => Beacon.open()}>
 				<Text style={styles.contactUsText}>💬</Text>
 			</TouchableOpacity>
