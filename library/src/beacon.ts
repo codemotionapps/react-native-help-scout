@@ -13,6 +13,7 @@ interface IBeacon {
 	logout(): void
 	navigate(route: string): void
 	search(query: string): void
+	openArticle(articleId: string): void
 }
 
 export default <IBeacon>NativeModules.RNHelpScoutBeacon

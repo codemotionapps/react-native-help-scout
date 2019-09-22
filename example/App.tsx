@@ -10,6 +10,9 @@ const styles = StyleSheet.create({
 	alignCenter: {
 		alignItems: 'center',
 	},
+	spaceEvenly: {
+		justifyContent: 'space-evenly',
+	},
 	flex: {
 		flex: 1,
 	},
@@ -46,7 +49,7 @@ export default function App() {
 	}
 
 	return (
-		<SafeAreaView style={styles.flex}>
+		<SafeAreaView style={[styles.flex, styles.spaceEvenly]}>
 			<StatusBar barStyle="dark-content" />
 			<Button
 				title="Login"
@@ -72,6 +75,7 @@ export default function App() {
 				/>
 				<Button title="Search" onPress={handleSearch} />
 			</View>
+			<Button title="Open article" onPress={() => Beacon.openArticle('592acfa30428634b4a337f5d')} />
 			<TouchableOpacity style={styles.contactUsButton} onPress={() => Beacon.open()}>
 				<Text style={styles.contactUsText}>💬</Text>
 			</TouchableOpacity>
