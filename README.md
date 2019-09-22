@@ -34,7 +34,7 @@ Beacon.identify({
 // Unset user information in Beacon
 Beacon.logout()
 
-// Navigate to a specific screen
+// Navigate to a specific screen (iOS only)
 Beacon.navigate('/ask/message/')
 
 // Open with search

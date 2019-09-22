@@ -58,4 +58,9 @@ public class HelpScoutModule extends ReactContextBaseJavaModule {
 	public void logout() {
 		Beacon.logout();
 	}
+
+	@ReactMethod
+	public void navigate(String route) {
+
+	}
 }
