@@ -44,6 +44,13 @@ RCT_EXPORT_METHOD(previousMessages)
 //    });
 }
 
+RCT_EXPORT_METHOD(contactForm)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [HSBeacon navigate:@"/ask/message/" beaconSettings:self->settings];
+    });
+}
+
 //RCT_EXPORT_METHOD(chat)
 //{
 //    dispatch_async(dispatch_get_main_queue(), ^{

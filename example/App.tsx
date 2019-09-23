@@ -85,7 +85,7 @@ export default function App() {
 				<View style={styles.pt} />
 				<Button title="Logout" onPress={() => Beacon.logout()} />
 				<View style={styles.pt} />
-				<Button title="Message" onPress={() => Beacon.navigate('/ask/message')} />
+				<Button title="Contact form" onPress={() => Beacon.contactForm()} />
 				<View style={styles.pt} />
 				<View style={[styles.row, styles.alignCenter]}>
 					<TextInput
@@ -115,7 +115,7 @@ export default function App() {
 						<View style={styles.pt} />
 					</>
 				) : null}
-				{/* <Button title="Chat" onPress={() => Beacon.chat()} /> */}
+				{/* <Button title="Chat" onPress={() => Beacon.chat()} /> <View style={styles.pt} /> */}
 				{Platform.OS === 'android' ? (
 					<>
 						<Button title="Previous messages" onPress={() => Beacon.previousMessages()} />

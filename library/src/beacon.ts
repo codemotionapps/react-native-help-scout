@@ -16,6 +16,7 @@ interface IBeacon extends EventSubscriptionVendor {
 	search(query: string): void
 	openArticle(articleId: string): void
 	// chat(): void
+	contactForm(): void
 	previousMessages(): void
 	dismiss(callback: () => void): void
 }

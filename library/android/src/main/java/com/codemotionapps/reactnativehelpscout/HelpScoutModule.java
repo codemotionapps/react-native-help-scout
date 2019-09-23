@@ -86,6 +86,11 @@ public class HelpScoutModule extends ReactContextBaseJavaModule {
 		BeaconActivity.open(this.reactContext, BeaconScreens.PREVIOUS_MESSAGES, new ArrayList<String>());
 	}
 
+	@ReactMethod
+	public void contactForm() {
+		BeaconActivity.open(this.reactContext, BeaconScreens.CONTACT_FORM_SCREEN, new ArrayList<String>());
+	}
+
 //	@ReactMethod
 //	public void chat() {
 //		BeaconActivity.open(this.reactContext, BeaconScreens.CHAT, new ArrayList<String>());

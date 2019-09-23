@@ -43,6 +43,9 @@ Beacon.search('query')
 // Open article
 Beacon.openArticle('DOCS_ARTICLE_ID')
 
+// Open contact from
+Beacon.contactForm()
+
 // Open previous messages (Android only)
 Beacon.previousMessages()
 
