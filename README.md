@@ -1,5 +1,8 @@
 # React Native Help Scout
 
+[![npm version](https://img.shields.io/npm/v/react-native-help-scout.svg)](https://www.npmjs.com/package/react-native-help-scout)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 Help Scout's Beacon for React Native.
 
 ## Installation

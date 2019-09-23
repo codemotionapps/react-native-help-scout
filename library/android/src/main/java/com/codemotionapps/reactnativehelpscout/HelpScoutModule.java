@@ -1,13 +1,19 @@
 package com.codemotionapps.reactnativehelpscout;
 
+import android.app.Application;
+
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.helpscout.beacon.Beacon;
 import com.helpscout.beacon.model.BeaconScreens;
 import com.helpscout.beacon.ui.BeaconActivity;
+import com.helpscout.beacon.ui.BeaconEventLifecycleHandler;
+import com.helpscout.beacon.ui.BeaconOnClosedListener;
+import com.helpscout.beacon.ui.BeaconOnOpenedListener;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,9 +22,31 @@ import java.util.Map;
 public class HelpScoutModule extends ReactContextBaseJavaModule {
 	private final ReactApplicationContext reactContext;
 
-	public HelpScoutModule(ReactApplicationContext reactContext) {
+	public HelpScoutModule(final ReactApplicationContext reactContext) {
 		super(reactContext);
 		this.reactContext = reactContext;
+
+		BeaconEventLifecycleHandler eventLifecycleHandler = new BeaconEventLifecycleHandler(
+				new BeaconOnOpenedListener() {
+					@Override
+					public void onOpened() {
+						reactContext
+								.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+								.emit("open", null);
+					}
+				},
+				new BeaconOnClosedListener() {
+					@Override
+					public void onClosed() {
+						reactContext
+								.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+								.emit("close", null);
+					}
+				}
+		);
+
+		Application application = (Application) reactContext.getApplicationContext();
+		application.registerActivityLifecycleCallbacks(eventLifecycleHandler);
 	}
 
 	@Override
