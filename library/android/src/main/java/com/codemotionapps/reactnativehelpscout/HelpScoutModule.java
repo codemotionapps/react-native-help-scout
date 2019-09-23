@@ -1,5 +1,6 @@
 package com.codemotionapps.reactnativehelpscout;
 
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -89,4 +90,9 @@ public class HelpScoutModule extends ReactContextBaseJavaModule {
 //	public void chat() {
 //		BeaconActivity.open(this.reactContext, BeaconScreens.CHAT, new ArrayList<String>());
 //	}
+
+	@ReactMethod
+	public void dismiss(Callback callback) {
+
+	}
 }

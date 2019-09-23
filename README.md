@@ -46,7 +46,7 @@ Beacon.openArticle('DOCS_ARTICLE_ID')
 // Open previous messages (Android only)
 Beacon.previousMessages()
 
-// Dismissing the Beacon
+// Dismissing the Beacon (iOS only)
 Beacon.dismiss(() => console.log('Beacon dismissed'))
 
 // Event handlers

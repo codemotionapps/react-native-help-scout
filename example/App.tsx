@@ -101,16 +101,20 @@ export default function App() {
 				<View style={styles.pt} />
 				<Button title="Open article" onPress={() => Beacon.openArticle('592acfa30428634b4a337f5d')} />
 				<View style={styles.pt} />
-				<Button
-					title="Open and dismiss in 5 seconds and show alert"
-					onPress={() => {
-						Beacon.open()
-						setTimeout(() => {
-							Beacon.dismiss(() => Alert.alert('Beacon closed!'))
-						}, 5000)
-					}}
-				/>
-				<View style={styles.pt} />
+				{Platform.OS === 'ios' ? (
+					<>
+						<Button
+							title="Open and dismiss in 5 seconds and show alert"
+							onPress={() => {
+								Beacon.open()
+								setTimeout(() => {
+									Beacon.dismiss(() => Alert.alert('Beacon closed!'))
+								}, 5000)
+							}}
+						/>
+						<View style={styles.pt} />
+					</>
+				) : null}
 				{/* <Button title="Chat" onPress={() => Beacon.chat()} /> */}
 				{Platform.OS === 'android' ? (
 					<>
