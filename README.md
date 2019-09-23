@@ -11,7 +11,7 @@ Help Scout's Beacon for React Native.
 yarn add react-native-help-scout
 ```
 
-## iOS
+### iOS
 
 Please visit https://developer.helpscout.com/beacon-2/ios/#additional-setup and complete the steps
 

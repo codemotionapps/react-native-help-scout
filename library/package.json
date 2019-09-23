@@ -9,11 +9,10 @@
 	"description": "Help Scout's Beacon for React Native",
 	"license": "MIT",
 	"scripts": {
-		"prepublishOnly": "yarn run clean && yarn run copy-readme && yarn run license && yarn run build && yarn run copy-js-d.ts",
+		"prepublishOnly": "yarn run clean && yarn run copy-readme && yarn run copy-license && yarn run build",
 		"clean": "rimraf dist",
 		"copy-readme": "cp ../README.md ./",
 		"copy-license": "cp ../LICENSE ./",
-		"copy-js-d.ts": "cp ./src/*.js ./src/*.d.ts ./dist",
 		"build": "tsc",
 		"watch": "yarn run build --watch"
 	},

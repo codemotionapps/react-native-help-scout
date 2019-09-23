@@ -1,3 +1,5 @@
 tsconfig.json
 tsconfig.tsbuildinfo
 xcuserdata
+android/build/
+android/react-native-help-scout.iml
