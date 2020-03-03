@@ -68,3 +68,7 @@ Beacon.events.off('close', closeHandler)
 Beacon.events.off('close')
 Beacon.events.once('close', () => console.log('This will only get called the first time the close event is triggered'))
 ```
+
+## Requirements
+
+-   React Native 0.61.0 or newer
