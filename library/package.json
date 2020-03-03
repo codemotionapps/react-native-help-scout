@@ -1,6 +1,6 @@
 {
 	"name": "react-native-help-scout",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"main": "./dist/index.js",
 	"typings": "./dist/index.d.ts",
 	"repository": "git@github.com:codemotionapps/react-native-help-scout.git",
@@ -17,8 +17,8 @@
 		"watch": "yarn run build --watch"
 	},
 	"peerDependencies": {
-		"react": "^16.8.6",
-		"react-native": "^0.60.0"
+		"react": ">16.9.0",
+		"react-native": ">0.61.0"
 	},
 	"dependencies": {
 		"@types/events": "*",

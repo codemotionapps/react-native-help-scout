@@ -7,6 +7,7 @@ module.exports = {
 				root: ['.'],
 				alias: {
 					'react-native-help-scout': '../library/src',
+					'react-native': './node_modules/react-native',
 					react: './node_modules/react',
 				},
 			},

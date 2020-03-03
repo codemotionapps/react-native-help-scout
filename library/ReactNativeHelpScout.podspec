@@ -21,4 +21,6 @@ Pod::Spec.new do |s|
   s.dependency 'Beacon'
 
   s.frameworks = 'UIKit'
+
+  s.static_framework = true
 end

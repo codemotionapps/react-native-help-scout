@@ -7,7 +7,8 @@
 		"outDir": "./dist",
 		"baseUrl": ".",
 		"paths": {
-			"react": ["../example/node_modules/react"]
+			"react": ["../example/node_modules/react"],
+			"react-native": ["../example/node_modules/react-native"]
 		}
 	},
 	"include": ["./src"]
