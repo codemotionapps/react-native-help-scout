@@ -58,7 +58,7 @@ repositories {
 	jcenter()
 }
 
-def _beaconVersion = safeExtGet("helpscoutBeacon", "1.0.6")
+def _beaconVersion = safeExtGet("helpscoutBeacon", "2.0.2")
 
 dependencies {
 	// ref:
