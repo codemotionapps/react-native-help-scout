@@ -25,6 +25,8 @@ Beacon.init('beacon-id')
 
 // Open Beacon
 Beacon.open()
+// Open Beacon Secure mode
+Beacon.open(signature)
 
 // Set user information in Beacon
 Beacon.identify({

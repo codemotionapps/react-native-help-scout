@@ -23,10 +23,10 @@ RCT_EXPORT_METHOD(init:(NSString *)beaconId)
     settings.delegate = self;
 }
 
-RCT_EXPORT_METHOD(open)
+RCT_EXPORT_METHOD(open:(NSString *)signature)
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [HSBeacon openBeacon:self->settings];
+       [HSBeacon openBeacon:self->settings signature:signature];
     });
 }
 
