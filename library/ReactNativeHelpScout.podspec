@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.authors      = { 'Dimitar Nestorov': 'opensource@dimitarnestorov.com' }
   s.homepage     = package['homepage']
   s.license      = package['license']
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '11.0'
 
   s.module_name  = 'ReactNativeHelpScout'
 
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m}"
 
   s.dependency 'React'
-  s.dependency 'Beacon'
+  s.dependency 'Beacon', '>2'
 
   s.frameworks = 'UIKit'
 
